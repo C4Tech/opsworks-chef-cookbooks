@@ -1,8 +1,10 @@
 #
 node[:deploy].each do |application, deploy|
-    deploy[:brunch_variables].each do |key, value|
-        Chef::Log.info("Setting ENV[#{key}] to #{value}")
-        ENV[key] = value
+    if deploy[:brunch_variables]
+        deploy[:brunch_variables].each do |key, value|
+            Chef::Log.info("Setting ENV[#{key}] to #{value}")
+            ENV[key] = value
+        end
     end
 
     execute "brunch_build" do
