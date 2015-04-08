@@ -5,7 +5,7 @@
 node[:deploy].each do |application, deploy|
    execute "bower_update" do
         user deploy[:user]
-        command "bower update --production"
+        command "bower update --production --silent"
         cwd "#{deploy[:deploy_to]}/current"
         only_if {::File.exists?('./bower.json') }
    end

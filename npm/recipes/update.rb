@@ -1,8 +1,8 @@
 #
 node[:deploy].each do |application, deploy|
-   execute "npm_install" do
+   execute "npm_update" do
         user deploy[:user]
-        command "npm install --production"
+        command "npm update --production"
         cwd "#{deploy[:deploy_to]}/current"
         only_if {::File.exists?('./package.json') }
    end
