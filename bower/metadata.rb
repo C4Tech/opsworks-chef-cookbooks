@@ -1,4 +1,5 @@
 name              "bower"
+
 maintainer        "C4 Tech and Design"
 maintainer_email  "info@c4tech.com"
 license           "MIT"
