@@ -27,7 +27,6 @@
 
 
 
-
 node[:deploy].each do |application, deploy|
   
   template "#{deploy[:deploy_to]}/shared/.env" do
