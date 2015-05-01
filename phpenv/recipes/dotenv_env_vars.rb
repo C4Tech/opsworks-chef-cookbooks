@@ -28,7 +28,7 @@ node[:deploy].each do |application, deploy|
         :application => "#{application}"
     )
 
-    Chef::Log.info("Generating dotenv for app: #{application} with env: #{node[:custom_env][application.to_s][:environment]}...")
+    Chef::Log.info("Generating dotenv for app: #{application}...")
 
 
     only_if do
