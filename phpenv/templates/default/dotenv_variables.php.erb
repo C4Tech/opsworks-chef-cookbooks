@@ -1,0 +1,7 @@
+<?php
+/*
+ * Environment Variables for application <%= @application %>
+ */
+<% @env[@application.to_s][:environment].sort.each do | env_value | %> 
+     <%= env_value %>
+<% end %>
