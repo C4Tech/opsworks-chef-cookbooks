@@ -1,28 +1,15 @@
-#  Custom Environment Variables May be set as shown below:
+#  Custom Environment Variables are set as shown below:
 # 
 # 
 # 
 # {
-#     "custom_env": {
-#         "staging_site": {
-#             "environment": "staging",
-#             "path_to_vars": "src/acme/application/config/staging",
-#             "env_vars" : [ 
-#                 "CACHE_TIME=3600", 
-#                 "SOME_API_KEY=BlahBlah", 
-#                 "ANOTHER_API_KEY=helloWorld!" 
-#             ] 
-#         },
-#         "production_site": {
-#             "htaccess_template": "advanced_htaccess.rb",
-#             "path_to_vars": "src/acme/application/config/production",
-#             "env_vars" : [ 
-#                 "CACHE_TIME=1234", 
-#                 "SOME_API_KEY=nahnah", 
-#                 "ANOTHER_API_KEY=hello-monkey!" 
-#             ] 
-#         }
-#     }
+#      "deploy": {
+#       "myapp": {
+#       "application": "myapp",
+#       "application_type": "php",
+#       "environment": {
+#         "database_endpoint": "mydbinstance.us-east-1.rds.amazonaws.com",
+#      …
 # }
 
 
