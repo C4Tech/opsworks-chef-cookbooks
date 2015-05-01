@@ -23,12 +23,10 @@ node[:deploy].each do |application, deploy|
     mode "0666"
 
     variables( 
-        :env => (node[:custom_env] rescue nil), 
-        :environment => (node[:custom_env][application.to_s][:environment] rescue nil),
         :application => "#{application}" 
     )
 
-    Chef::Log.info("Generating dotenv for app: #{application} with env: #{custom_env}...")
+    Chef::Log.info("Generating dotenv for app: #{application}...")
    
     
     only_if do
