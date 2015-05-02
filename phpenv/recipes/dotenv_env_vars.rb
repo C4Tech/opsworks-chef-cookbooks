@@ -18,14 +18,15 @@ node[:deploy].each do |application, deploy|
     mode "0644"
 
     variables(
-        :environment => (node[:deploy][application][:environment_variables] rescue nil),
+        :env => (deploy[:environment] rescue nil),
+        :environment => (deploy[:environment_variables] rescue nil),
         :application => "#{application}"
     )
 
     Chef::Log.info("Generating dotenv for app: #{application}...")
 
     only_if do
-     deploy[:application_type] == "php" and File.directory?("#{deploy[:deploy_to]}/current/}")
+        deploy[:application_type] == "php"
     end
   end
 end
