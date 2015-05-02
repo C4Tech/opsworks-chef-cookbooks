@@ -2,6 +2,6 @@
 /*
  * Environment Variables for application <%= @application %>
  */
-<% @env.sort.each do | env_key, env_value | %>
+<% @environment.each do | env_key, env_value | %>
     <%= env_key %>=<%= env_value %>
 <% end %>
