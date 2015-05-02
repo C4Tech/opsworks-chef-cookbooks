@@ -20,11 +20,10 @@ node[:deploy].each do |application, deploy|
     source "dotenv_variables.php.erb"
     owner deploy[:user]
     group deploy[:group]
-    mode "0666"
+    mode "0644"
 
     variables(
-        :env => (node[:custom_env] rescue nil),
-        :environment => (node[:custom_env][application.to_s][:environment] rescue nil),
+        :env => (deploy[application.to_s][:environment] rescue nil),
         :application => "#{application}"
     )
 
