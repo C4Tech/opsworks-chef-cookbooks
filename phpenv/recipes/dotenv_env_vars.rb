@@ -12,11 +12,11 @@
 
 node[:deploy].each do |application, deploy|
   template "#{deploy[:deploy_to]}/current/.env" do
+    only_if { deploy[:application_type] == "php" }
     source "dotenv_variables.php.erb"
     owner deploy[:user]
     group deploy[:group]
-    mode "0644"
-
+    mode 0644
     variables(
         :env => (deploy[:environment] rescue nil),
         :environment => (deploy[:environment_variables] rescue nil),
@@ -24,9 +24,5 @@ node[:deploy].each do |application, deploy|
     )
 
     Chef::Log.info("Generating dotenv for app: #{application}...")
-
-    only_if do
-        deploy[:application_type] == "php"
-    end
   end
 end

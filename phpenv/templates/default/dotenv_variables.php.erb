@@ -1,11 +1,9 @@
-<?php
-/*
- * Environment Variables for application <%= @application %>
- */
-<% @environment.each do | env_key, env_value | %>
-    <%= env_key %>=<%= env_value %>
+# Environment Variables for application <%= @application %>
+
+<% @environment.each do | key, value | %>
+    <%= key %>=<%= value %>
 <% end %>
 
-<% @env.each do | env_key, env_value | %>
-    <%= env_key %>=<%= env_value %>
+<% @env.each do | key, value | %>
+    <%= key %>=<%= value %>
 <% end %>
